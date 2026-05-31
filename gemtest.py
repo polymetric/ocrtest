@@ -74,6 +74,7 @@ def get_schema(cls: BaseModel):
 images_path = "images"         # directory containing images to extract data from
 results_path = "results.csv"   # result data
 finished_path = "finished.txt" # file containing a list of images we've already looked at
+                               # TODO: make this part of results.csv
 
 finished = []                  # list of images we've already looked at
 
