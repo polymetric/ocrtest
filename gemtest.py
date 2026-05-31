@@ -104,8 +104,7 @@ while not q.empty():
     while not request_completed:
         try:
             response = client.models.generate_content(
-#               model='gemini-3.5-flash',
-                model='gemini-3.1-flash-lite',
+                model='gemini-3.5-flash',
                 contents=images+[
 #                    minecraft_font,
                     '''
@@ -114,14 +113,15 @@ while not q.empty():
                     signs follow this format:
                     <shop owner>
                     <quantity>
-                    B [buy price] : S [sell price]
+                    B [buy price] : [sell price] S
                     <item id>
 
                     if the sign doesn't roughly follow this format, ignore it
                     if the sign is partially obscured, too small or too blurry, ignore it
 
-                    the B or S may be before or after the number, don't include the B or the S
                     c and o are similar, don't confuse them
+                    5 and S are similar, don't confuse them
+                    the B or S may be before or after the number, don't include the B or the S
 
                     the buy or sell price is optional, if one is not present, don't include it
 
