@@ -172,6 +172,7 @@ while not q.empty():
                 config=types.GenerateContentConfig(
                     response_mime_type='application/json',
                     response_schema=get_schema(ShopList),
+                    service_tier='flex',
                 ),
             )
 
